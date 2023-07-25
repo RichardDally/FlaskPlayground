@@ -1,0 +1,4 @@
+Flask
+flask-blueprints
+waitress
+python-dotenv
