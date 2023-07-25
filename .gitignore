@@ -9,6 +9,9 @@ __pycache__/
 # Jetbrains
 .idea
 
+# Upload directory
+uploads
+
 # Distribution / packaging
 .Python
 build/

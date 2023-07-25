@@ -2,7 +2,8 @@
 
 {% block content %}
     <span class="title"><h1>{% block title %} Upload {% endblock %}</h1></span>
-    <div class="content">
-        <h2>Upload form</h2>
-    </div>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="video">
+        <input type="submit" value="Upload">
+    </form>
 {% endblock %}
