@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from config import Config
 
@@ -14,6 +15,10 @@ def create_app(config_class=Config):
 
     from app.upload import bp as upload_bp
     app.register_blueprint(upload_bp)
+
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.mkdir(app.config['UPLOAD_FOLDER'])
+        app.logger.info(f"[{app.config['UPLOAD_FOLDER']}] directory has been created")
 
     @app.route('/test/')
     def index_page():
